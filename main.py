@@ -27,3 +27,9 @@ print(requisicao.text)
 requisicao = requests.get(f'{linkdb}/.json')
 print(requisicao)
 print(requisicao.text)
+
+#deletar um dado (DELETE)
+
+requisicao = requests.delete(f'{linkdb}/vendas/cliente/.json')
+print(requisicao)
+print(requisicao.text)
