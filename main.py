@@ -2,7 +2,7 @@
 import requests
 import json
 
-linkdb = 'https://fir-integration-ae3e9-default-rtdb.firebaseio.com'
+linkdb = 'realtime database link'
 
 #Criar uma venda (POST)
 
