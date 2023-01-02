@@ -6,4 +6,24 @@ linkdb = 'https://fir-integration-ae3e9-default-rtdb.firebaseio.com'
 
 #Criar uma venda (POST)
 
-requisicao = requests.post(f'linkdb/produtos/.json')
+nome = input("Digite seu nome")
+produto = input('qual produto voce comprou')
+valor = input('preço do produto')
+
+dados = {'cliente':nome,'produto':produto,'valor': valor }
+requisicao = requests.post(f'{linkdb}/vendas/.json', data=json.dumps(dados))
+print(requisicao)
+print(requisicao.text)
+
+#Edita a venda (PATCH)
+
+dados = {'cliente': 'Jose'}
+requisicao = requests.patch(f'{linkdb}/vendas/-NKlTBV_FEzWDTEvjqot/.json', data=json.dumps(dados))
+print(requisicao)
+print(requisicao.text)
+
+#obter apenas uma venda ou todas as vendas (GET)
+
+requisicao = requests.get(f'{linkdb}/.json')
+print(requisicao)
+print(requisicao.text)
